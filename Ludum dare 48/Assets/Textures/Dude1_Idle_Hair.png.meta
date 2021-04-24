@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: eab4227ea0d85c94cb7e0f64ebefa28a
+guid: b43de94c2f9c55c4bbbbb6c74efb558b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6153262137821927123
-    second: Dude1_Idle_0
+      213: 3930128193331418342
+    second: Dude1_Idle_Hair_0
   - first:
-      213: 2634620098847982727
-    second: Dude1_Idle_1
+      213: -301178874216266580
+    second: Dude1_Idle_Hair_1
   - first:
-      213: 2306202224755150387
-    second: Dude1_Idle_2
+      213: 7792099361871519061
+    second: Dude1_Idle_Hair_2
+  - first:
+      213: 312497373175636884
+    second: Dude1_Idle_Hair_3
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -112,7 +115,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dude1_Idle_0
+      name: Dude1_Idle_Hair_0
       rect:
         serializedVersion: 2
         x: 0
@@ -126,14 +129,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d69cbe1057c46550800000000000000
-      internalID: 6153262137821927123
+      spriteID: 6e45445e4ce9a8630800000000000000
+      internalID: 3930128193331418342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dude1_Idle_1
+      name: Dude1_Idle_Hair_1
       rect:
         serializedVersion: 2
         x: 16
@@ -147,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78440f5650d009420800000000000000
-      internalID: 2634620098847982727
+      spriteID: ca4cc7cd86ff1dbf0800000000000000
+      internalID: -301178874216266580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dude1_Idle_2
+      name: Dude1_Idle_Hair_2
       rect:
         serializedVersion: 2
         x: 32
@@ -168,8 +171,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33e0fb264b6410020800000000000000
-      internalID: 2306202224755150387
+      spriteID: 55d56e6d519132c60800000000000000
+      internalID: 7792099361871519061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dude1_Idle_Hair_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493606984b6365400800000000000000
+      internalID: 312497373175636884
       vertices: []
       indices: 
       edges: []
