@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour
 
     public GameObject player;
     public Transform transform;
-
+  
     private float playerLoc;
     private float mousePos;
     private Transform playerT;
@@ -33,29 +33,44 @@ public class PlayerAttack : MonoBehaviour
 
 
     void Update() {
-        
 
         Vector2 mousePos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
         worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
         float mouseLoc = worldPosition.x;
         float playerLoc = playerT.position.x;
-        if (mouseLoc < playerLoc && s_FacingRight && CC2D.m_FacingRight) {
-            Flip(2 * flipConstant);
-            
-        } else if (mouseLoc < playerLoc && s_FacingRight && !CC2D.m_FacingRight) {
+        Debug.Log(player.transform.position.x - transform.position.x);
 
-            Flip(2 * flipConstant);
+        if (mouseLoc < playerLoc &&CC2D.m_FacingRight) {
 
-        } else if (mouseLoc > playerLoc && !s_FacingRight && !CC2D.m_FacingRight) {
+            transform.position = new Vector2(player.transform.position.x - 1, transform.position.y);
+            transform.localScale = new Vector3(-1f, 1f, 1f);
 
-            Flip(2 * flipConstant);
 
-        } else if (mouseLoc > playerLoc && !s_FacingRight && CC2D.m_FacingRight) {
+        }
 
-            Flip(2 * flipConstant);
+        else if (mouseLoc > playerLoc && CC2D.m_FacingRight)
+        {
+            transform.position = new Vector2(player.transform.position.x + 1,transform.position.y);
+
+            transform.localScale = new Vector3(1f, 1f, 1f);
+
+
+        }
+        else if (mouseLoc < playerLoc && !CC2D.m_FacingRight) {
+
+
+            transform.position = new Vector2(player.transform.position.x - 1, transform.position.y);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+
+        }
+        else if (mouseLoc > playerLoc  && !CC2D.m_FacingRight) {
+
+        
+            transform.position = new Vector2(player.transform.position.x + 1, transform.position.y);
+            transform.localScale = new Vector3(-1f, 1f, 1f);
 
         } /*else {
-            Debug.Log("else");
+            Debug.Log("else"); 
             transform.localPosition = originalpos;
             transform.localScale = originalScale;
         }*/
