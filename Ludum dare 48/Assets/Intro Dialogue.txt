@@ -1,0 +1,6 @@
+﻿You
+what?
+You
+where the hell am I?
+
+Move your character with the arrow keys, attack with the left mouse button. You attack to where your cursor is pointing to.
