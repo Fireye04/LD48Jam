@@ -37,13 +37,17 @@ public class TextBoxManager : MonoBehaviour
     void Update () {
         if (currentLine % 2 == 0) {
             textObj.text = textLines[currentLine];
-            currentLine += 1;
+            if (currentLine <= endAtLine) { 
+                currentLine += 1;
+            }
         } else {
             textObj2.text = textLines[currentLine];
         }
 
         if (Input.GetKeyDown(KeyCode.Return)) {
-            currentLine += 1;
+            if (currentLine <= endAtLine) {
+                currentLine += 1;
+            }
         }
 
         if (currentLine > endAtLine) {
