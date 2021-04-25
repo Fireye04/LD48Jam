@@ -38,7 +38,6 @@ public class PlayerAttack : MonoBehaviour
         worldPosition = Camera.main.ScreenToWorldPoint(mousePos);
         float mouseLoc = worldPosition.x;
         float playerLoc = playerT.position.x;
-        Debug.Log(player.transform.position.x - transform.position.x);
 
         if (mouseLoc < playerLoc &&CC2D.m_FacingRight) {
 
