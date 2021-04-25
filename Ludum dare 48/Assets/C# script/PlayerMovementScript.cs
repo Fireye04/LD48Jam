@@ -6,6 +6,9 @@ public class PlayerMovementScript : MonoBehaviour
 {
 
     public CharacterController2D controller;
+    public Animator animator;
+    public Rigidbody2D rb;
+
 
     public float runSpeed = 40f;
     bool jump = false;
@@ -19,6 +22,8 @@ public class PlayerMovementScript : MonoBehaviour
     {
 
         xMove = Input.GetAxisRaw("Horizontal") * runSpeed;
+        animator.SetFloat("xSpeed", Mathf.Abs(xMove));
+        animator.SetFloat("ySpeed", rb.velocity.y);
 
         if (Input.GetButtonDown("Jump")) {
             jump = true;
