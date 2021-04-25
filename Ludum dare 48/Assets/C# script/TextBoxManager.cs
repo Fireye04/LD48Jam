@@ -36,6 +36,9 @@ public class TextBoxManager : MonoBehaviour
     void Update () {
         textObj.text = textLines[currentLine];
 
+        if (Input.GetKeyDown(KeyCode.Return)) {
+            currentLine += 1;
+        }
 
     }
 }
