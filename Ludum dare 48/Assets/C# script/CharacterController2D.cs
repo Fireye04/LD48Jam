@@ -15,10 +15,12 @@ public class CharacterController2D : MonoBehaviour {
 	private bool m_Grounded;            // Whether or not the player is grounded.
 	const float k_CeilingRadius = .2f; // Radius of the overlap circle to determine if the player can stand up
 	private Rigidbody2D m_Rigidbody2D;
-	private bool m_FacingRight = true;  // For determining which way the player is currently facing.
+	public bool m_FacingRight = true;  // For determining which way the player is currently facing.
 	private Vector3 m_Velocity = Vector3.zero;
 
 	public Animator animator;
+	public GameObject sword;
+	private PlayerAttack PA;
 
 	[Header("Events")]
 	[Space]
@@ -31,20 +33,25 @@ public class CharacterController2D : MonoBehaviour {
 	public BoolEvent OnCrouchEvent;
 	private bool m_wasCrouching = false;
 
+	private void Start() {
+		PA = sword.GetComponent<PlayerAttack>();
+	}
+
+
 	private void Awake() {
-		m_Rigidbody2D = GetComponent<Rigidbody2D>();
+	m_Rigidbody2D = GetComponent<Rigidbody2D>();
 
-		if (OnLandEvent == null)
-			OnLandEvent = new UnityEvent();
+	if (OnLandEvent == null)
+		OnLandEvent = new UnityEvent();
 
-		if (OnCrouchEvent == null)
-			OnCrouchEvent = new BoolEvent();
+	if (OnCrouchEvent == null)
+		OnCrouchEvent = new BoolEvent();
 	}
 
 	private void FixedUpdate() {
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
-		animator.SetBool("touchingGround", false);
+		
 
 		// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
 		// This can be done using layers instead but Sample Assets will not overwrite your project settings.
@@ -55,7 +62,9 @@ public class CharacterController2D : MonoBehaviour {
 				animator.SetBool("touchingGround", true);
 				if (!wasGrounded)
 					OnLandEvent.Invoke();
-			}
+			} else {
+				animator.SetBool("touchingGround", false);
+            }
 		}
 	}
 
@@ -128,6 +137,15 @@ public class CharacterController2D : MonoBehaviour {
 		// Multiply the player's x local scale by -1.
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
+		if (PA.flipConstant == -1) {
+			PA.flipConstant = -1;
+		} else if (PA.flipConstant == 1) {
+			PA.flipConstant = 1;
+		} else {
+			PA.flipConstant = -1;
+		}
+
+		Debug.Log(PA.flipConstant);
 		transform.localScale = theScale;
 	}
 }

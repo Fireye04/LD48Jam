@@ -37,4 +37,5 @@ public class PlayerMovementScript : MonoBehaviour
         jump = false;
 
     }
+
 }
