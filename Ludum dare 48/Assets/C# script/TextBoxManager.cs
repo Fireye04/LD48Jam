@@ -9,6 +9,7 @@ public class TextBoxManager : MonoBehaviour
 
     public GameObject TextBox;
     public TMPro.TMP_Text textObj;
+    public TMPro.TMP_Text textObj2;
 
     public int currentLine;
     public int endAtLine;
@@ -34,7 +35,12 @@ public class TextBoxManager : MonoBehaviour
     }
 
     void Update () {
-        textObj.text = textLines[currentLine];
+        if (currentLine % 2 == 0) {
+            textObj.text = textLines[currentLine];
+            currentLine += 1;
+        } else {
+            textObj2.text = textLines[currentLine];
+        }
 
         if (Input.GetKeyDown(KeyCode.Return)) {
             currentLine += 1;
