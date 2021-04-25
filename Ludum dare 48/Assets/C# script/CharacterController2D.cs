@@ -35,6 +35,7 @@ public class CharacterController2D : MonoBehaviour {
 
 	private void Start() {
 		PA = sword.GetComponent<PlayerAttack>();
+		PA.flipConstant = -1;
 	}
 
 
@@ -138,12 +139,10 @@ public class CharacterController2D : MonoBehaviour {
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		if (PA.flipConstant == -1) {
-			PA.flipConstant = -1;
-		} else if (PA.flipConstant == 1) {
 			PA.flipConstant = 1;
-		} else {
+		} else if (PA.flipConstant == 1) {
 			PA.flipConstant = -1;
-		}
+		} 
 
 		Debug.Log(PA.flipConstant);
 		transform.localScale = theScale;
