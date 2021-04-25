@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 178890845}
   - component: {fileID: 178890844}
   - component: {fileID: 178890838}
+  - component: {fileID: 178890846}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -450,6 +451,21 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.58}
   serializedVersion: 2
   m_Radius: 0.42969453
+--- !u!114 &178890846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178890837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0240cfd826af4624891c9b81cc4c79d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  currentHealth: 0
+  healthBar: {fileID: 1578133505}
 --- !u!1 &260173288
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,9 +930,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -46.622375, y: 1.986206}
-  m_SizeDelta: {x: 99, y: 100}
-  m_Pivot: {x: 0.23933338, y: 0.5}
+  m_AnchoredPosition: {x: -25.2, y: -0.000012875}
+  m_SizeDelta: {x: 108.7093, y: 89.9386}
+  m_Pivot: {x: 0.3911568, y: 0.5}
 --- !u!114 &1090694489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -937,7 +953,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 10297bb7a41f35c4dae5b5f81ccb6a31, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -985,12 +1001,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578133503}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.000061035156}
-  m_SizeDelta: {x: 0, y: -0.0001}
+  m_AnchoredPosition: {x: 1.7151031, y: -0.17359924}
+  m_SizeDelta: {x: 3.4305, y: 10.0818}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1156439577
 MonoBehaviour:
@@ -1005,7 +1021,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7960785, g: 0.1137255, b: 0.1137255, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1070,6 +1086,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1578133503}
   - component: {fileID: 1578133504}
+  - component: {fileID: 1578133505}
   m_Layer: 5
   m_Name: health bar
   m_TagString: Untagged
@@ -1088,16 +1105,16 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1716546926}
   - {fileID: 1156439576}
+  - {fileID: 1716546926}
   - {fileID: 1090694488}
   m_Father: {fileID: 1800890180}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -7.1277, y: -1.9862}
-  m_SizeDelta: {x: 486.1118, y: 60.3073}
+  m_AnchoredPosition: {x: -340.91565, y: 224.14828}
+  m_SizeDelta: {x: 275.3403, y: 31.1513}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1578133504
 MonoBehaviour:
@@ -1138,18 +1155,31 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1156439576}
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 0.726
+  m_Value: 73.5
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1578133505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1578133502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f36d135b5fa304ea696f1d1a3bb343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1578133504}
 --- !u!1 &1716546925
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,7 +1210,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578133503}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
