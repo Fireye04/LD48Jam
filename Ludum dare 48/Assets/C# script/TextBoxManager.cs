@@ -43,10 +43,12 @@ public class TextBoxManager : MonoBehaviour
         }
 
         if (Input.GetKeyDown(KeyCode.Return)) {
+            if (currentLine < endAtLine) {
                 currentLine += 1;
+            }
         }
 
-        if (currentLine > endAtLine) {
+        if (currentLine >= endAtLine && Input.GetKeyDown(KeyCode.Return)) {
             TextBox.SetActive(false);
         }
     }
